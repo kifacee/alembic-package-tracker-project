@@ -1,0 +1,16 @@
+<html>
+  <head>
+    {% if title %}
+      <title>{{ title }}</title>
+    {% else %}
+      <title>Package Tracker</title>
+    {% endif %}
+  </head>
+  <body>
+    {% if body %}
+      {{ body }}
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!-- shipping_request.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <form method="post" action="">
+    {{ form.csrf_token }}
+
+    <!-- can create a variable to pass into the next html -->
+     <!-- so this passes in the 'field' variable with a 'sender' value -->
+    {% for name in ['sender', 'recipient', 'origin', 'destination', 'express'] %}
+      {% with field = name %}
+        {% include 'form_element.html' %}
+      {% endwith %}
+    {% endfor %}
+
+    <div>{{ form.submit }}</div>
+    <div>{{ form.cancel }}</div>
+  </form>
+{% endblock %}

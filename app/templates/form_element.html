@@ -1,0 +1,13 @@
+<div>
+    <!-- FlaskForms getter functions are defined
+        so we can use form[field] to get the value of whatever the
+        given field is. so the form can be treated like a dicitonary -->
+    {{ form[field].label }} {{ form[field] }}
+    {% if form[field].errors %}
+      <ul>
+        {% for error in form[field].errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
